@@ -7,7 +7,7 @@ This project implements a PHP script to handle bid requests and generate appropr
 1. Clone the repository:
 
 ```
-git clone <repository_url>
+git clone https://github.com/rokon20/google-rtb
 ```
 
 2. Navigate to the project directory:
@@ -38,4 +38,4 @@ The API endpoint will be available at http://localhost:8080.
 
 ## Sample Bid JSON Data
 
-- `json_data/bid_request.json`
+- Please refer to the file `json_data/bid_request.json` for a sample bid JSON data.
