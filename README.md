@@ -13,7 +13,7 @@ git clone https://github.com/rokon20/google-rtb
 2. Navigate to the project directory:
 
 ```
-cd real-time-bidding
+cd google-rtb
 ```
 
 3. Run the container using Docker Compose:
