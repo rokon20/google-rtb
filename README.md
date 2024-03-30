@@ -24,7 +24,7 @@ docker-compose up --build -d
 
 4. Access the endpoint:
 
-The API endpoint will be available at http://localhost:8080.
+    The API endpoint will be available at http://localhost:8080.
 
 ## Testing
 

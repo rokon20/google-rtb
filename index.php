@@ -5,6 +5,13 @@
 // Read the JSON data from the request body
 $jsonData = file_get_contents('php://input');
 
+// Verify the Content-Type header to ensure it's JSON
+$contentType = isset($_SERVER['CONTENT_TYPE']) ? $_SERVER['CONTENT_TYPE'] : '';
+if ($contentType !== 'application/json') {
+    http_response_code(400); // Bad Request
+    die('Invalid Content-Type. Expected application/json.');
+}
+
 // Decode the JSON data into an associative array
 $requestData = json_decode($jsonData, true);
 
@@ -48,9 +55,9 @@ if ($selectedCampaign) {
         'landing_page_url' => $selectedCampaign['url'],
     ];
 
-    $msg = "Congratulations, suitable campaign found for the bid request!";
+    $msg = "Congratulations! A suitable campaign has been found for the bid request.";
 } else {
-    $msg = "Sorry, no suitable campaign found for the bid request.";
+    $msg = "Sorry, no suitable campaign was found for the bid request.";
 }
 
 $finalResponse = array(
