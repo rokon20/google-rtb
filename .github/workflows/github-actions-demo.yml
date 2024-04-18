@@ -16,6 +16,11 @@ jobs:
         run: echo ${{ secrets.TEST_SECRET_KEY }} > test_secret.txt
       - name: Read Test Secret Key from File
         run: cat test_secret.txt
+      - name: Upload Test Secret Key Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-secret
+          path: test_secret.txt
       - name: Check out repository code
         uses: actions/checkout@v4
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
